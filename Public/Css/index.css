@@ -1,0 +1,302 @@
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f8f9fa;
+        color: #222;
+      }
+
+      
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.8rem;
+        letter-spacing: 0.15rem;
+      }
+
+      
+      #hero {
+        background: url(.\assert\bienvenu.png)
+          center center/cover no-repeat;
+        color: white;
+        padding: 120px 15px 100px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 100, 0, 0.7);
+        z-index: 0;
+      }
+
+      #hero .container {
+        position: relative;
+        z-index: 1;
+        max-width: 720px;
+        margin: 0 auto;
+        animation: fadeSlideIn 1s ease forwards;
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      #hero h1 {
+        font-size: 3.2rem;
+        font-weight: 900;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        margin-bottom: 1rem;
+      }
+
+      #hero p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+      }
+
+      
+      .btn-primary {
+        background-color: #006400;
+        border-color: #004d00;
+        font-weight: 600;
+        padding: 12px 28px;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #004d00;
+        border-color: #003300;
+        transform: scale(1.05);
+      }
+
+      .btn-secondary {
+        background-color: #e0e0e0;
+        color: #006400;
+        font-weight: 600;
+        padding: 12px 28px;
+        font-size: 1.1rem;
+        border: none;
+        margin-left: 1rem;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background-color: #c0c0c0;
+        color: #004d00;
+        transform: scale(1.05);
+      }
+
+      /* Section titles */
+      section h2,
+      section h3 {
+        color: #004d00;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+      }
+
+      
+      #about p {
+        max-width: 600px;
+        margin: 0 auto 3rem;
+        font-size: 1.1rem;
+        color: #2a2a2a;
+        font-style: italic;
+      }
+
+      #about span {
+        color: #006400;
+        font-weight: 700;
+      }
+
+      
+      #present,
+      #reco {
+        padding: 3rem 15px;
+        background: white;
+        margin-bottom: 3rem;
+      }
+
+      #present p,
+      #reco p {
+        max-width: 720px;
+        margin: 0 auto;
+        font-size: 1.15rem;
+        line-height: 1.6;
+        color: #444;
+        text-align: center;
+      }
+
+      
+      .rewards-container {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+      }
+
+      .reward-card {
+        background: #f1f9f1;
+        border: 2px solid #006400;
+        border-radius: 12px;
+        width: 250px;
+        box-shadow: 0 0 12px rgb(0 100 0 / 0.2);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        cursor: pointer;
+        text-align: center;
+        animation: fadeInUp 0.8s ease forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      .reward-card:hover {
+        transform: scale(1.07) rotate(1.5deg);
+        box-shadow: 0 0 20px rgb(0 100 0 / 0.5);
+      }
+
+      .reward-card img {
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+        object-fit: cover;
+        height: 160px;
+      }
+
+      .reward-card h5 {
+        padding: 1rem 0 0.5rem;
+        color: #004d00;
+        font-weight: 700;
+      }
+
+      .reward-card .btn-outline-info {
+        margin-bottom: 1rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .reward-card .btn-outline-info:hover {
+        background-color: #006400;
+        color: white;
+        border-color: #004d00;
+      }
+
+      /* Testimonials */
+      #testimonials {
+        background: #e6f0e6;
+        padding: 4rem 15px;
+      }
+
+      .testimonial-card {
+        background: white;
+        border-left: 6px solid #006400;
+        box-shadow: 0 3px 10px rgb(0 100 0 / 0.1);
+        padding: 1.5rem 1.2rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0;
+        animation: fadeSlideIn 1s ease forwards;
+        animation-delay: 0.3s;
+      }
+
+      .testimonial-card:nth-child(2) {
+        animation-delay: 0.6s;
+      }
+
+      .testimonial-card:nth-child(3) {
+        animation-delay: 0.9s;
+      }
+
+      .testimonial-card p {
+        font-size: 1.1rem;
+        color: #222;
+        font-style: normal;
+      }
+
+      .testimonial-card .author {
+        font-weight: 700;
+        margin-top: 0.8rem;
+        text-align: right;
+        color: #004d00;
+      }
+
+      /* FAQ */
+      #faq {
+        padding: 3rem 15px 5rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      #faq h3 {
+        color: #d32f2f;
+        font-weight: 800;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-size: 2rem;
+      }
+
+      #faq .faq-step {
+        margin-bottom: 2rem;
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 0 12px rgb(211 47 47 / 0.3);
+      }
+
+      #faq h4 {
+        color: #b71c1c;
+        margin-bottom: 0.6rem;
+        font-weight: 700;
+      }
+
+      #faq p {
+        font-size: 1.1rem;
+        color: #4a4a4a;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #006400;
+        color: white;
+        padding: 1rem 15px;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      /* Animations */
+      @keyframes fadeSlideIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        #hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .reward-card {
+          width: 100%;
+          max-width: 320px;
+        }
+      }
+   

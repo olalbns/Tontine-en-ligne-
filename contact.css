@@ -1,0 +1,38 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    
+} */
+.contact {
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+    background-color: #eaeceb;
+   
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 2em;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.8em;
+    border: 1px solid #0baf21;
+    border-radius: 4px;
+  }
+  .contact-form select{
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+  }
+  
+  .infos-contact {
+    line-height: 1.6;
+  }
+  

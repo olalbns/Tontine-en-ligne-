@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="../font-awesome-6-pro-main/css/all.css">
+    <link rel="stylesheet" href="../bootstrap-5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        
+        html, body {
+                height: 100%;
+                margin: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center; 
+            align-items: center;     
+             /* background-image: url(green-soft-modern-line-abstract-background-design-web-backdrop-banner-brochure-website-flyer-landing-page-presentation-certificate-webinar-vector.jpg); */
+            background-repeat: no-repeat;
+         
+            }
+       
+        .wrapper{
+            position: relative;
+            width: 600px;
+            height: auto;
+            background: transparent;
+            border:1px solid rgba(5, 1, 1, 0.5);
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 30px rgb(0,0, 0, .5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* overflow: hidden; */
+        }
+         @media (max-width: 600px) {
+            .wrapper {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .wrapper .form-box login{
+            display: none;
+        }
+        
+        .wrapper .form-box {
+            width: 100%;
+            padding: 40px;
+
+        }
+        .form-box h2{
+            font-size: 2em;
+            color: #162938;
+            text-align: center;
+        }
+        .input-box  input:focus~label,
+        .input-box  input:valid~label{
+            top: -5px;
+        }
+        .input-box{
+            position: relative;
+            width: 100%;
+            height: 50px;
+            border-bottom: 2px solid #162938;
+            margin: 30px 0;
+        }
+        .input-box label{
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 1em;
+            color: #162938;
+            font-weight: 500;
+            pointer-events: none;
+            transition: .5s;
+
+        }
+        .input-box input{
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1em;
+            color: #162938;
+            font-weight: 600;
+            padding:0 35px 0 5px ;
+        }
+        .input-box .icon{
+            position: absolute;
+            right: 8px;
+            font-size: 1.2em;
+            color: #162938;
+            line-height: 57px;
+        }
+        .remenber-forgot{
+            font-size: .9em;
+            color: #162938;
+            font-weight: 500;
+            margin: -15px 0 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .remenber-forgot label input{
+            accent-color:#162938 ;
+            margin-right: 3px;
+        }
+        .remenber-forgot a{
+            text-decoration: none;
+            color: #162938;
+        }
+        .remenber-forgot a:hover{
+            text-decoration: underline;
+           
+        }
+        .btn {
+            width: 100%;
+            height: 45px;
+            /* background: #162938;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            color: #fff;
+            font-weight: 500; */
+
+        }
+        .login-register{
+            font-size: .9em;
+            color: #162938;
+            text-align: center;
+            font-weight: 500;
+            margin: 25px 0 10px;
+        }
+        .login-register p a{
+            text-decoration: none;
+            color: #162938;
+            font-weight: 600; 
+        }
+        .login-register p a:hover{
+            text-decoration: underline;
+
+
+        }
+        
+        
+    </style>
+    
+</head>
+<body>
+  <div class="wrapper">
+    
+
+<div class="erreur-zone position-absolute top-0"></div>
+    <div class="form-box register">
+        <h2 class="text-success">Inscription</h2>
+        <form action="" method="post">
+        <div class="input-box">
+            <span class="icon" ><i class="fa fa-user text-success"></i></span>
+            <input type="text" name="nom" id="" required>
+            <label for="">Nom</label>
+        </div>
+        <div class="input-box">
+            <span class="icon" ><i class="fa fa-user text-success"></i></span>
+            <input type="text" name="prenoms" id="" required>
+            <label for="">Prenoms</label>
+        </div>
+        <div class="input-box">
+            <span class="icon" ><i class="fa fa-envelope text-success"></i></span>
+            <input type="email" name="email" id="" required>
+            <label for="">Email</label>
+        </div>
+        <div class="input-box">
+            <span class="icon" ><i class="fa fa-phone text-success"></i></span>
+            <input type="number" name="telephone" id="" required>
+            <label for="">Téléphone</label>
+        </div>
+        <div class="input-box">
+            <span class="icon"><i class="fa fa-lock text-success"></i></span>
+            <input type="password" name="motdepasse" id="" required>
+            <label for="">Mot de passe</label>
+        </div>
+        <div class="remenber-forgot">
+        </div>
+        <button type="submit" class="btn btn-success">S'inscrire</button>
+        <div class="login-register">
+            <p>Vous avez déja un compte ? <a href="../Connexion/" class="login-link"> Connexion</a></p>
+        </div>
+        
+    </form>
+    </div>
+
+
+  </div>
+
+<script src="../Js/message.js"></script>
+<script src="../Js/inscription.js"></script>
+
+</body>
+</html>
