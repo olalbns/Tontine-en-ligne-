@@ -104,8 +104,13 @@ body {
     margin-left: 22px;
 }
 
-.Hero-name div {
+/* .Hero-name div {
     width: auto;
+} */
+@media (max-width: 720px) {
+    .Hero-name .col-sm-12 {
+        width: 100% !important;
+    }
 }
 
 .bg-gray {
@@ -377,6 +382,10 @@ i {
         display: block;
     }
 
+    .dropdow i {
+        margin-left: 40%;
+    }
+
     .sidebar {
         display: none;
         width: 100%;
@@ -453,7 +462,15 @@ i {
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }

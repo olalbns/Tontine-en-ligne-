@@ -12,23 +12,27 @@
 </head>
 
 <body>
-    <div class="Hero-name row p-2">
-            <div class="d-flex justify-content-between align-items-center w-100 colum">
-                <div class="d-flex justify-content-between align-items-center w-70">
-                    <div class="mt-1">
+    <?php
+    if (isset($_COOKIE['User_id']) && !empty($_COOKIE['User_id'])) { ?>
+
+
+        <div class="Hero-name row p-2">
+            <div class="d-flex justify-content-between align-items-center w-100 colum row">
+                <div class="d-flex justify-content-between align-items-center col-6 col-sm-12">
+                    <div class="mt-1 col-4">
                         <h3 class="text-green ">TNTL</h3>
                     </div>
                     <div class="">
-                        <h2 class="n">Récompense</h2>
+                        <h2 class="n col-4">Récompense</h2>
                     </div>
-                    <div id="dropdown" onclick="respo()" class="dropdow">
+                    <div id="dropdown" onclick="respo()" class="dropdow col-4">
                         <i class="fa-solid fa-navicon"></i>
                     </div>
                 </div>
 
 
-                <div id="profile" class=" profile">
-                    <a style="width: 55%;" class="text-decoration-none d-flex" href="../Profile/">
+                <div id="profile" class=" profile col-6">
+                    <a class="text-decoration-none d-flex" style="margin-left: auto;" href="../Profile/">
                         <div class="profile-img">
                             <img src="" alt="Profile Picture"
                                 class="rounded-circle profile_img">
@@ -52,6 +56,47 @@
             </div>
 
         </div>
+    <?php } else { ?>
+        <nav class="navbar navbar-expand-md navbar-dark bg-success sticky-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="#">TNTLN</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-home me-1"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about"><i class="fa fa-info me-1"></i> A propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#present"><i class="fas fa-shield-alt me-1"></i> Avantages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reco"><i class="fas fa-award me-1"></i> Récompense</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact"><i class="fa fa-message me-1"></i> Contact</a>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Connexion/"><i class="fa fa-user me-1"></i> Se connecter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Inscription/"><i class="fa fa-user-circle me-1"></i> S'inscrire</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <?php }
+    ?>
     <div class="container-fluid fonction">
         <div class="erreur-zone"></div>
         <h1 class="mt-3">Récompense disponible</h1>
@@ -131,8 +176,8 @@
         </div>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-         localStorage.setItem("location_recompense", window.location)
+        document.addEventListener("DOMContentLoaded", function() {
+            localStorage.setItem("location_recompense", window.location)
         })
     </script>
     <script src="../bootstrap-5.3.3/dist/js/bootstrap.min.js"></script>
@@ -141,6 +186,7 @@
     <script src="../Js/recompense.js"></script>
     <script src="../Js/profile.js"></script>
     <script src="../Js/moduleRec.js"></script>
+    <script src="..Js/script.js"></script>
 </body>
 
 </html>

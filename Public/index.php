@@ -1,245 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Tontine en ligne - Accueil</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome-6-pro-main/css/all.min.css">
-    <title>Acceuil: Cotiser en ligne</title>
+    <link rel="stylesheet" href="font-awesome-6-pro-main/css/fontawesome.min.css">
+    <link rel="stylesheet" href="Css/index.css">
+    <!-- <link rel="stylesheet" href="Css/Dash.css"> -->
+   
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="Logo"><img src="" alt=""></div>
-            <div class="responsive-div">
-                <div class="links">
-                    <ul>
-                        <li><a href="#hero"><i class="fa fa-home"></i> Acceuil</a></li>
-                        <li><a href="#about"><i class="fas fa-info-circle"></i> A Propos</a></li>
-                        <li><a href="#present"><i class="fas fa-shield-alt"></i> Avantages</a></li>
-                        <li><a href="#reco"><i class="fas fa-award"></i> Récompense</a></li>
-                        <li><a href="#contact"><i class="fa fa-message"></i> Contact</a></li>
+    <nav class="navbar navbar-expand-md navbar-dark bg-success sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">TNTLN</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                    </ul>
-                </div>
-                <div class="Log-btns">
-                    <ul>
-                        <li><a href=""><i class="fa fa-user"></i>&nbsp;Se connecter</a>
-                        </li>
-                        <li> <a href=""><i class="fa fa-user-circle"></i>&nbsp;S'inscrire</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#"><i class="fa fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><i class="fa fa-info me-1"></i> A propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#present"><i class="fas fa-shield-alt me-1"></i> Avantages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reco"><i class="fas fa-award me-1"></i> Récompense</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><i class="fa fa-message me-1"></i> Contact</a>
+                    </li>
+                </ul>
 
-    <section id="hero" class="hero">
-        <div class="hero-container">
-            <div class="hero-tilte">
-                <h1>Épargnez aujourd’hui, gagnez demain !</h1>
+                <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Connexion/"><i class="fa fa-user me-1"></i> Se connecter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Inscription/"><i class="fa fa-user-circle me-1"></i> S'inscrire</a>
+                    </li>
+                </ul>
             </div>
-            <div class="hero-desc">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, ipsa quos deleniti ea reiciendis eos,
-                    aliquid quaerat non illo culpa inventore corporis, laborum nostrum sed corrupti sequi temporibus ad
-                    consequatur.</p>
-            </div>
-            <div class="call-action-btns">
-                <a href="">S'inscrire</a>
-                <a href="">Découvrir les avantages</a>
+        </div>
+    </nav>
+<div class="erreur-zone"></div>
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Épargnez aujourd’hui, gagnez demain !</h1>
+            <p class="lead mb-4">
+                Rejoignez une communauté de cotisants modernes et atteignez vos
+                objectifs financiers sans stress. Gagnez en liberté, en sécurité, et
+                surtout en confiance.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="Inscription/" class="btn btn-primary btn-lg">S'inscrire</a>
+                <a href="Récompense/" class="btn btn-secondary btn-lg">Découvrir les récompenses</a>
             </div>
         </div>
     </section>
-    <section id="about" class="about">
-        <div class="about-container">
-            <div class="about-img"><img src="" alt=""></div>
-            <div class="about-desc">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente quisquam expedita commodi quos
-                    soluta, corrupti voluptates at, in natus culpa eaque nihil ullam fugiat praesentium nemo magnam
-                    quidem, cum unde?</p>
-            </div>
+
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-success text-center mb-4">À propos</h2>
+            <p class="text-center mx-auto" style="max-width: 800px;">
+                <span class="fw-bold">Non_de_la_plate</span> révolutionne l’épargne solidaire. Finie la
+                paperasse, vive la simplicité digitale ! <b class="text-success">Cotisez</b>, <b class="text-success">suivez</b>,
+                <b class="text-success">recevez</b>. Tout est entre vos mains.
+            </p>
         </div>
     </section>
-    <section id="present" class="present">
-        <div class="present-container">
-            <div class="present-title">
-                <h1>Qu’est-ce qu’une tontine en ligne ?</h1>
+
+    <section id="present" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-success text-center mb-4">Qu’est-ce qu’une tontine en ligne ?</h2>
+            <p class="text-center mx-auto" style="max-width: 800px;">
+                La tontine en ligne vous permet de cotiser depuis chez vous, à votre
+                rythme — chaque jour, chaque semaine ou chaque mois. À la fin, vous
+                recevez une récompense de votre choix : une somme d’argent ou un bien
+                comme une moto, un réfrigérateur, etc. Simple, transparente et flexible,
+                c’est une nouvelle façon d’atteindre vos objectifs sans pression.
+            </p>
+        </div>
+    </section>
+
+    <section id="reco" class="py-5 bg-success bg-opacity-10">
+        <div class="container">
+            <h2 class="text-success text-center mb-4">Récompenses disponibles</h2>
+            <p class="text-center mb-5 mx-auto" style="max-width: 800px;">
+                Vous pouvez choisir de recevoir votre récompense sous forme d’argent ou
+                de biens matériels. Voici quelques exemples :
+            </p>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4 index-recompense">
+                
             </div>
-            <div class="present-desc">
-                <p>La tontine en ligne vous permet de cotiser depuis chez vous, à votre rythme — chaque jour, chaque
-                    semaine ou chaque mois. À la fin, vous recevez une récompense de votre choix : une somme d’argent ou
-                    un bien comme une moto, un réfrigérateur, etc. Simple, transparente et flexible, c’est une nouvelle
-                    façon d’atteindre vos objectifs sans pression.</p>
-            </div>
-            <div class="present-avt">
-                <h1>Les avantages de Non_de_la_plarte</h1>
-                <div class="avt-container">
-                    <div class="avt">
-                        <div class="avt-ico"><i class="fa fa-"></i></div>
-                        <div class="avt-name">
-                            <h3>Flexible</h3>
-                        </div>
-                        <div class="avt-desc">
-                            <p>Choisissez le montant et la fréquence de vos cotisations. Vous pouvez cotiser chaque
-                                jour,
-                                chaque semaine ou chaque mois, selon ce qui vous convient le mieux.</p>
-                        </div>
-                    </div>
-                    <div class="avt">
-                        <div class="avt-ico"><i class="fa fa-"></i></div>
-                        <div class="avt-name">
-                            <h3>Choix entre argent ou biens</h3>
-                        </div>
-                        <div class="avt-desc">
-                            <p>Vous avez la possibilité de choisir entre recevoir votre récompense (Choisie) sous forme
-                                d’argent
-                                ou de biens matériels. C’est vous qui décidez !</p>
-                        </div>
-                    </div>
-                    <div class="avt">
-                        <div class="avt-ico"><i class="fa fa-"></i></div>
-                        <div class="avt-name">
-                            <h3>Accessible à tous</h3>
-                        </div>
-                        <div class="avt-desc">
-                            <p>
-                                La tontine en ligne est accessible à tous, quel que soit votre niveau de revenu. Vous
-                                pouvez commencer à cotiser avec un montant modeste et augmenter progressivement vos
-                                contributions.</p>
+            <a class="text-center text-success" href="Récompense">Voir plus </a>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-success text-center mb-5">Ils nous font confiance</h2>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <p class="card-text fst-italic">
+                                "J'ai pu réaliser mon rêve d'acheter une moto grâce à la tontine en
+                                ligne. C'est un service fiable et sécurisé!"
                             </p>
+                            <p class="card-text text-end fw-bold text-success">- Jean Dupont</p>
                         </div>
                     </div>
-                    <div class="avt">
-                        <div class="avt-ico"><i class="fa fa-"></i></div>
-                        <div class="avt-name">
-                            <h3>Transparente et sécurisée</h3>
-                        </div>
-                        <div class="avt-desc">
-                            <p>
-                                La tontine en ligne est transparente et sécurisée. Vous pouvez suivre vos cotisations et
-                                vos
-                                gains en temps réel, et toutes les transactions sont protégées par des mesures de
-                                sécurité
-                                avancées.
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <p class="card-text fst-italic">
+                                "La tontine en ligne m'a permis de faire des économies et d'investir
+                                dans mon projet. Je recommande vivement!"
                             </p>
+                            <p class="card-text text-end fw-bold text-success">- Marie Curie</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <p class="card-text fst-italic">
+                                "Une expérience incroyable! J'ai pu cotiser facilement et recevoir ma
+                                récompense sans aucun souci."
+                            </p>
+                            <p class="card-text text-end fw-bold text-success">- Paul Martin</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
-    <section id="reco" class="reco">
-        <div class="reco-container">
-            <div class="reco-title">
-                <h1>Récompense disponible</h1>
-            </div>
-            <div class="reco-desc">
-                <p>Vous pouvez choisir de recevoir votre récompense sous forme d’argent ou de biens matériels. Voici
-                    quelques exemples de biens que vous pouvez obtenir :</p>
-            </div>
-            <div class="reco-prod-container">
-                <div class="reco-prod">
-                    <div class="reco-prod-img">
-                        <img src="" alt="Moto">
+
+    <section id="faq" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-success text-center mb-5">Comment ça marche ?</h2>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-step p-4 mb-3 border border-success border-start-0 border-end-0 border-bottom-0 rounded-0">
+                        <h4 class="text-success fw-bold">1. S'inscrire</h4>
+                        <p class="mb-0">
+                            Inscrivez-vous sur notre site. Choisissez votre rythme de cotisation.
+                        </p>
                     </div>
-                    <div class="reco-prod-name">Moto</div>
-                    <div class="reco-prod-price">500 000 FCFA</div>
-                    <div class="reco-prod-button">
-                        <a href="">Découvrir</a>
+
+                    <div class="faq-step p-4 mb-3 border border-success border-start-0 border-end-0 border-bottom-0 rounded-0">
+                        <h4 class="text-success fw-bold">2. Cotisez</h4>
+                        <p class="mb-0">Cotisez via PayPal, Mobile Money, etc.</p>
                     </div>
-                </div>
-                <div class="reco-prod">
-                    <div class="reco-prod-img">
-                        <img src="" alt="Moto">
-                    </div>
-                    <div class="reco-prod-name">Moto</div>
-                    <div class="reco-prod-price">500 000 FCFA</div>
-                    <div class="reco-prod-button">
-                        <a href="">Découvrir</a>
-                    </div>
-                </div>
-                <div class="reco-prod">
-                    <div class="reco-prod-img">
-                        <img src="" alt="Moto">
-                    </div>
-                    <div class="reco-prod-name">Moto</div>
-                    <div class="reco-prod-price">500 000 FCFA</div>
-                    <div class="reco-prod-button">
-                        <a href="">Découvrir</a>
-                    </div>
-                </div>
-                <div class="reco-prod">
-                    <div class="reco-prod-img">
-                        <img src="" alt="Moto">
-                    </div>
-                    <div class="reco-prod-name">Moto</div>
-                    <div class="reco-prod-price">500 000 FCFA</div>
-                    <div class="reco-prod-button">
-                        <a href="">Découvrir</a>
-                    </div>
-                </div>
-                <div class="reco-prod">
-                    <div class="reco-prod-img">
-                        <img src="" alt="Moto">
-                    </div>
-                    <div class="reco-prod-name">Moto</div>
-                    <div class="reco-prod-price">500 000 FCFA</div>
-                    <div class="reco-prod-button">
-                        <a href="">Découvrir</a>
-                    </div>
-                </div>
-                <div class="reco-prod">
-                    <div class="reco-prod-img">
-                        <img src="" alt="Moto">
-                    </div>
-                    <div class="reco-prod-name">Moto</div>
-                    <div class="reco-prod-price">500 000 FCFA</div>
-                    <div class="reco-prod-button">
-                        <a href="">Découvrir</a>
+
+                    <div class="faq-step p-4 mb-3 border border-success border-start-0 border-end-0 border-bottom-0 rounded-0">
+                        <h4 class="text-success fw-bold">3. Gagnez votre récompense</h4>
+                        <p class="mb-0">À la fin de la cotisation, vous obtenez le prix de votre choix.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="Témoignage">
-        <div class="temo-title">
-            <h1>Ils nous font confiance</h1>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Company, Inc. All rights reserved.</p>
         </div>
-        <div class="temo-container">
-            <div class="temo">
-                <p>"J'ai pu réaliser mon rêve d'acheter une moto grâce à la tontine en ligne. C'est un service fiable et
-                    sécurisé!"</p>
-                <p>- Jean Dupont</p>
-            </div>
-            <div class="temo">
-                <p>"La tontine en ligne m'a permis de faire des économies et d'investir dans mon projet. Je recommande
-                    vivement!"</p>
-                <p>- Marie Curie</p>
-            </div>
-            <div class="temo">
-                <p>"Une expérience incroyable! J'ai pu cotiser facilement et recevoir ma récompense sans aucun souci."
-                </p>
-                <p>- Paul Martin</p>
-            </div>
-    </section>
-    <section id="contact" class="Contact">
-        <div class="contact-container">
-            <h1>Contacter nous</h1>
-            <div class="form-carte">
-                <div class="form-container">
-                    <form action="">
-                        <label for="">Nom</label>
-                        <input name="nom" type="text">
-                        <label for="">Prenom</label>
-                        <input name="prenom" type="text">
-                        <label for="">Message</label>
-                        <textarea name="message" id=""></textarea>
-                    </form>
-                </div>
-                <div class="carte-container"></div>
-            </div>
-        </div>
-    </section>
-</body>
+    </footer>
+
+    <script src="bootstrap-5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Js/message.js"></script>
+    <script src="Js/index.js"></script>
+    </body>
 
 </html>
