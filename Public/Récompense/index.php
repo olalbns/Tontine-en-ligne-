@@ -20,25 +20,25 @@
             <div class="d-flex justify-content-between align-items-center w-100 colum row">
                 <div class="d-flex justify-content-between align-items-center col-6 col-sm-12">
                     <div class="mt-1 col-4">
-                        <h3 class="text-green ">TNTL</h3>
+                        <h3 class=" ">TNTL</h3>
                     </div>
                     <div class="">
                         <h2 class="n col-4">Récompense</h2>
                     </div>
-                    <div id="dropdown" onclick="respo()" class="dropdow col-4">
+                    <!-- <div id="dropdown" onclick="respo()" class="dropdow col-4">
                         <i class="fa-solid fa-navicon"></i>
-                    </div>
+                    </div> -->
                 </div>
 
 
                 <div id="profile" class=" profile col-6">
-                    <a class="text-decoration-none d-flex" style="margin-left: auto;" href="../Profile/">
+                    <a class="text-decoration-none d-flex profil--link" style="margin-left: auto;" href="../Profile/">
                         <div class="profile-img">
                             <img src="" alt="Profile Picture"
                                 class="rounded-circle profile_img">
                         </div>&nbsp;
                         <div class="profile-name">
-                            <h6 class="text-green d-flex flex-wrap"><span class="profile_name">Undefined</span> <span
+                            <h6 class="text-white d-flex flex-wrap"><span class="profile_name">Undefined</span> <span
                                     class="profile_prenom">Undefined</span></h6>
                         </div>&nbsp;&nbsp;&nbsp;&nbsp;
                     </a>
@@ -175,6 +175,27 @@
             </div>
         </div>
     </div>
+
+     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div style="margin-top: 12%;" class="modal-content w-100">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Notifications</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="notification-container">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem("location_recompense", window.location)
@@ -186,7 +207,27 @@
     <script src="../Js/recompense.js"></script>
     <script src="../Js/profile.js"></script>
     <script src="../Js/moduleRec.js"></script>
-    <script src="..Js/script.js"></script>
+    <script src="../Js/script.js"></script>
+    <style>
+        @media (max-width: 768px) {
+            .profile {
+                margin-top: 10px;
+                justify-content: center;
+                display: flex;
+            }
+        }
+       @media (min-width: 720px) {
+    .Hero-name .col-sm-12 {
+        width: 50% !important;
+    }
+    .profil--link{
+        width: 20%;
+    }
+}
+
+           
+        
+    </style>
 </body>
 
 </html>

@@ -15,7 +15,8 @@ if (!$id_uti) {
     http_response_code(400);
     echo json_encode(['error' => 'ID utilisateur manquant.']);
     exit;
-}// Récupérer toutes les infos de cotisation de l'utilisateur
+}
+// Récupérer toutes les infos de cotisation de l'utilisateur
 $stmt = $con->prepare("SELECT * FROM infocoti WHERE id_uti = ?");
 $stmt->execute([$id_uti]);
 $cotisations = $stmt->fetchAll(PDO::FETCH_ASSOC);

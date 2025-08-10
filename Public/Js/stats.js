@@ -45,26 +45,26 @@ function getStats() {
                             cardsHtml += `
                 <h4 class="mt-1">${rec.nom_rec || "Titre Indéfini"}</h4>
                 <div class="cards-container row mt-1 w-100">
-                    <div class="card col otop shadow-sm p-2 mt-2 rounded-4 d-flex h-auto align-items-center">
+                    <div class="card col otop shadow p-2 mt-2 rounded-4 d-flex h-auto align-items-center">
                         <div class="title-others d-flex flex-column">
                             <h6 class="jj">Montant cottisé</h6>
                             <div class="price">
                                 <h3 class="">${rec.balance_uti || 0}<span> FCFA</span></h3>
                             </div>
                         </div>
-                        <i style="font-size:22px; color:green;" class="fa-solid fa-wallet"></i>
+                        <i style="font-size:22px; color:green;" class="fa-solid fa-wallet stat-icon"></i>
                     </div>
-                    <div class="card col otop shadow-sm p-3 mt-2 rounded-4 d-flex h-auto align-items-center">
+                    <div class="card col otop shadow p-2 mt-2 rounded-4 d-flex h-auto align-items-center">
                         <div class="title-others d-flex flex-column">
                             <h6 class="jj">Prochaine échéance</h6>
                             <div class="price">
                                 <h3>${rec.date_echeance ? new Date(rec.date_echeance).toLocaleDateString() : "Aucune échéance"}</h3>
                             </div>
                         </div>
-                        <i style="font-size:22px; color:green;" class="fa-solid fa-calendar"></i>
+                        <i style="font-size:22px; color:green;" class="fa-solid fa-calendar stat-icon"></i>
                     </div>
-                    <div class="card col otop shadow-sm p-3 mt-2 rounded-4 d-flex h-auto align-items-center">
-                        <div class="title-others w-100 d-flex flex-column">
+                    <div class="card col otop shadow p-2 mt-2 rounded-4 d-flex h-auto align-items-center">
+                        <div class="title-others w-100 d-flex flex-column p-1" >
                             <h6 class="jj">Progression</h6>
                             <div class="price">
                                 <div class="progression">
@@ -75,7 +75,7 @@ function getStats() {
                             </div>
                         </div>
                         <i style="font-size:22px; color:green; margin-top:-12px;"
-                            class="fa-solid fa-chart-line"></i>
+                            class="fa-solid fa-chart-line stat-icon"></i>
                     </div>
                 </div>`;
                         });

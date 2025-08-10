@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Marquer toutes les échéances restantes comme terminées
         $stmt_update_eche_final = $con->prepare("UPDATE echeance
                                                SET statut = 'terminé'
-                                               WHERE id_uti = ? AND id_rec = ? AND statut = 'en attente'");
+                                               WHERE id_uti = ? AND id_rec = ?");
         $stmt_update_eche_final->execute([$user_id, $id_rec]);
 
         // Notification pour dernière échéance

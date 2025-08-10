@@ -21,42 +21,41 @@
     ?>
     <section class="main">
         <div class="Hero-name row p-2">
-            <div class="d-flex justify-content-between align-items-center w-100 colum">
-                <div class="d-flex justify-content-between align-items-center w-70">
-                    <div class="mt-1">
-                        <h3 class="text-green ">TNTL</h3>
+            <div class="d-flex justify-content-between align-items-center w-100 colum row">
+                <div class="d-flex justify-content-between align-items-center col-8 w-100-respo">
+                    <div class="mt-1 col-4">
+                        <h3 class="">TNTL</h3>
                     </div>
-                    <div class="">
+                    <div class="col-5">
                         <h2 class="n">Tableau de bord</h2>
                     </div>
-                    <div onclick="respo()" id="dropdown" class="dropdow">
+                    <div onclick="respo()" id="dropdown" class="dropdow col-4">
                         <i class="fa-solid fa-navicon"></i>
                     </div>
                 </div>
 
 
-                <div id="profile" class=" profile">
-                    <a style="width: 55%;" class="text-decoration-none d-flex" href="../Profile/">
+                <div id="profile" class=" profile col-3">
+                    <a class="text-decoration-none d-flex profil--link" href="../Profile/">
                         <div class="profile-img">
                             <img src="" alt="Profile Picture" class="rounded-circle profile_img">
                         </div>&nbsp;
-                        <div class="profile-name">
-                            <h6 class="text-green d-flex flex-wrap"><span class="profile_name">Undefined</span> <span
+                        <div class="profile-name ">
+                            <h6 class="text-white d-flex flex-wrap"><span class="profile_name">Undefined</span> <span
                                     class="profile_prenom">Undefined</span></h6>
                         </div>&nbsp;&nbsp;&nbsp;&nbsp;
                     </a>
-                     <button  data-bs-toggle="modal" data-bs-target="#staticBackdrop" title="Notification"
-                            class="btn btn-light position-relative clear-notif-btn">
-                            <i style="font-size: large;" class="fa-solid fa-bell text-green"></i>
-                            <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger notification-badge" style="display: none;">0</span>
-                        </button>
-                    </div>
-
+                    <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" title="Notification"
+                        class="btn btn-light position-relative clear-notif-btn">
+                        <i style="font-size: large;" class="fa-solid fa-bell text-green"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger notification-badge" style="display: none;">0</span>
+                    </button>
                 </div>
 
             </div>
 
+        </div>
         </div>
         <div class="dash-container row">
             <div id="sidebar" class="sidebar col-3 shadow">
@@ -163,7 +162,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="notification-container">
-                          
+
                         </div>
                     </div>
                     <div class="modal-footer">

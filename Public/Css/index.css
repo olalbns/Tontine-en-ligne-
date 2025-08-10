@@ -185,7 +185,6 @@
           font-weight: bold;
         }
 
-        /* Adapter pour les petits écrans */
         @media (max-width: 768px) {
           #hero h1 {
             font-size: 2.5rem;
@@ -202,7 +201,6 @@
           .reward-card,
           .testimonial-card {
             flex: 0 0 90%;
-            /* Prend presque toute la largeur sur mobile */
           }
         }
         .erreur-zone{

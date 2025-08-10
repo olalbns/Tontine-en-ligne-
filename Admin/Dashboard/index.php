@@ -97,7 +97,7 @@
                     </li>
                 </ul>
             </nav>
-
+    <div class="erreur-zone"></div>
             <!-- Main Content -->
             <main class="col-md-9 col-lg-10 main-content">
                 <!-- Dashboard Section -->
@@ -108,7 +108,7 @@
                     </div>
 
                     <!-- Statistics Cards -->
-                    <div class="row">
+                    <div class="row stats_container">
                         <div class="col-xl-3 col-md-6">
                             <div class="stat-card">
                                 <div class="stat-icon" style="background: linear-gradient(135deg, #28a745, #20c997);">
@@ -421,6 +421,8 @@
             showSection('dashboard');
         });
     </script>
+    <script src="../js/stats.js"></script>
+    <script src="../js/message.js"></script>
 </body>
 
 </html>

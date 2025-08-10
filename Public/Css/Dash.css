@@ -1,7 +1,29 @@
+:root {
+            --primary-green: #28a745;
+            --light-green: #e9f7ee;
+            --dark-green: #218838;
+        }
 body {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    background-color: rgb(233, 233, 233);
+    background-color: #f8f9fa;
     overflow: hidden;
+}
+
+.card {
+    --bs-card-border-color: 0 !important;
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white !important;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #28a745, #20c997);
 }
 
 .w-70 {
@@ -90,7 +112,7 @@ body {
     font-weight: bolder;
     top: 0;
     /* background-color: rgb(233, 233, 233); */
-    background-color: rgb(255, 255, 255);
+    background: linear-gradient(135deg, var(--primary-green), var(--dark-green)) !important;
     z-index: 2;
     position: sticky;
     width: 100%;
@@ -98,6 +120,7 @@ body {
     align-items: center;
     justify-content: space-around;
     flex-wrap: nowrap;
+    color: white !important;
 }
 
 .Hero-name h3 {
@@ -256,6 +279,10 @@ body {
 
 i {
     display: inline;
+}
+
+tr .bg-success {
+    background-color: #d4edda !important;
 }
 
 .space-btw-radio {
@@ -474,3 +501,25 @@ i {
         transform: scale(1);
     }
 }
+
+.profil--link {
+    width: 40%;
+}
+
+@media (max-width: 728px) {
+    .w-100-respo {
+        width: 100% !important;
+    }
+
+    .profile {
+        width: auto;
+        margin: auto;
+        margin-left: 0;
+    }
+
+    .profil--link {
+        width: 50%;
+    }
+}
+
+.w-100-respo {}

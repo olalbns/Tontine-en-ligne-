@@ -23,7 +23,7 @@
         <div class="d-flex justify-content-between align-items-center w-100 colum">
             <div class="d-flex justify-content-between align-items-center w-70">
                 <div class="mt-1">
-                    <h3 class="text-green ">TNTL</h3>
+                    <h3 class="">TNTL</h3>
                 </div>
                 <div class="">
                     <h2 class="n">Mode de cotisation</h2>
@@ -40,7 +40,7 @@
                         <img src="" alt="Profile Picture" class="rounded-circle profile_img">
                     </div>&nbsp;
                     <div class="profile-name">
-                        <h6 class="text-green d-flex flex-wrap"><span class="profile_name">Undefined</span> <span
+                        <h6 class="text-white d-flex flex-wrap"><span class="profile_name">Undefined</span> <span
                                 class="profile_prenom">Undefined</span></h6>
                     </div>&nbsp;&nbsp;&nbsp;&nbsp;
                 </a>
