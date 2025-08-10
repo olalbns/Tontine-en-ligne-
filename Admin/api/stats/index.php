@@ -43,6 +43,9 @@ $resultats = [
     // 'total_recompenses' => $total_recompenses, 
 ];
 /////////////////////////////////////////////
+header('Content-Type: application/json');
+
+// Requête SQL
 $sql = "
 SELECT 
     n.id_notif,
@@ -51,14 +54,10 @@ SELECT
     u.prenom_uti AS prenom,
     n.message,
     n.id_rec,
-    CASE 
-        WHEN n.type = 'recompense' THEN r.prix_rec 
-        WHEN n.type = 'cotisation' THEN c.montant
-        WHEN n.type = 'echeance' THEN ic.montantChoisie
-        ELSE NULL 
-    END AS montant,
+    r.prix_rec AS prix_recompense,
+    c.montant AS montant_cotisation,
+    ic.montantChoisie AS montant_echeance,
     n.date,
-    n.type,
     e.statut AS statut_echeance,
     e.date_cotisation,
     e.date_échéance AS date_echeance
@@ -74,41 +73,46 @@ $stmt = $con->prepare($sql);
 $stmt->execute();
 $notifications = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Tableau de correspondance message → action
+// Mapping message → action + type
 $mappingActions = [
-    'Félicitations ! Vous avez terminé toutes les cotisations' => 'Cotisation terminée',
-    'Nouvelle récompense ajoutée' => 'Récompense ajoutée',
-    'Mise à jour de la récompense' => 'Récompense mise à jour',
-    'Nouvelle méthode de paiement ajouter' => 'Moyen de paiement ajouté',
-    'Un moyen de paiement a été supprimé' => 'Moyen de paiement supprimé',
-    'Profile mis a jour' => 'Profil mis à jour',
-    'Nouvelle échéance programmée' => 'Nouvelle échéance',
-    'Votre cotisation est en retard' => 'Cotisation en retard',
-    'Vous avez reçu un paiement' => 'Paiement reçu'
+    'Félicitations ! Vous avez terminé toutes les cotisations' => ['Cotisation terminée', 'cotisation'],
+    'Votre cotisation est en retard' => ['Cotisation en retard', 'cotisation'],
+    'Nouvelle échéance programmée' => ['Nouvelle échéance', 'echeance'],
+    'Nouvelle récompense ajoutée' => ['Récompense ajoutée', 'recompense'],
+    'Mise à jour de la récompense' => ['Récompense mise à jour', 'recompense'],
+    'Nouvelle méthode de paiement ajouter' => ['Moyen de paiement ajouté', 'autre'],
+    'Un moyen de paiement a été supprimé' => ['Moyen de paiement supprimé', 'autre'],
+    'Profile mis a jour' => ['Profil mis à jour', 'autre'],
+    'Vous avez reçu un paiement' => ['Paiement reçu', 'autre']
 ];
 
-// Tableau final
 $tableauNotifications = [];
 
 foreach ($notifications as $notif) {
-    // Détermination de l'action
     $action = $notif['message'];
-    foreach ($mappingActions as $pattern => $label) {
+    $type = 'autre';
+
+    foreach ($mappingActions as $pattern => $infos) {
         if (stripos($notif['message'], $pattern) !== false) {
-            $action = $label;
+            $action = $infos[0];
+            $type = $infos[1];
             break;
         }
     }
 
-    // Date affichée
+    $montant = '';
+    if ($type === 'recompense' && $notif['prix_recompense'] !== null) {
+        $montant = $notif['prix_recompense'];
+    } elseif ($type === 'cotisation' && $notif['montant_cotisation'] !== null) {
+        $montant = $notif['montant_cotisation'];
+    } elseif ($type === 'echeance' && $notif['montant_echeance'] !== null) {
+        $montant = $notif['montant_echeance'];
+    }
+
     $dateAffichee = $notif['date_cotisation'] 
                   ?: ($notif['date_echeance'] ?: $notif['date']);
 
-    // Statut
     $statut = $notif['statut_echeance'] ?: '—';
-
-    // Montant
-    $montant = ($notif['montant'] !== null) ? $notif['montant'] : '1';
 
     $tableauNotifications[] = [
         'Utilisateur' => trim($notif['nom'] . ' ' . $notif['prenom']),
@@ -119,26 +123,11 @@ foreach ($notifications as $notif) {
     ];
 }
 
-// Affichage HTML
-echo "<table border='1' cellpadding='5'>";
-echo "<tr><th>Utilisateur</th><th>Action</th><th>Montant</th><th>Date</th><th>Statut</th></tr>";
-foreach ($tableauNotifications as $ligne) {
-    echo "<tr>";
-    echo "<td>{$ligne['Utilisateur']}</td>";
-    echo "<td>{$ligne['Action']}</td>";
-    echo "<td>{$ligne['Montant']}</td>";
-    echo "<td>{$ligne['Date']}</td>";
-    echo "<td>{$ligne['Statut']}</td>";
-    echo "</tr>";
-}
-echo "</table>";
-
-
-
 ///////////////////////////////////////////////////////////////////////////////
 
 echo json_encode([
     'status' => 'success',
-    'data' =>[ $resultats]
+    'data' =>[ $resultats],
+    'activity'=> $tableauNotifications
 ]);
 ?>

@@ -13,10 +13,12 @@
             background: linear-gradient(135deg, var(--primary-green), var(--dark-green)) !important;
             box-shadow: 0 2px 10px rgba(40, 167, 69, 0.2);
         }
-        .erreur-zone{
+
+        .erreur-zone {
             position: fixed;
             z-index: 1000;
         }
+
         .navbar-brand {
             font-weight: bold;
             font-size: 1.5rem;
@@ -136,6 +138,7 @@
             margin-bottom: 25px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             border: none;
+           
         }
 
         .table-card h5 {
@@ -160,6 +163,15 @@
             padding: 15px;
             border-bottom: 1px solid #f8f9fa;
             vertical-align: middle;
+        }
+
+        .table {
+            overflow-x: scroll;
+             scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* Internet Explorer and Edge */
+
         }
 
         .btn-action {
@@ -293,8 +305,57 @@
             z-index: 999;
         }
 
-        .erreur-zone{
+        .erreur-zone {
             position: fixed;
             z-index: 1000;
-            
+
+        }
+
+        #pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            gap: 5px;
+        }
+
+        #pagination button {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        #pagination button:hover {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        #pagination button.active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+            font-weight: bold;
+        }
+
+        main {
+            max-height: 90vh;
+            overflow-y: auto;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* Internet Explorer and Edge */
+        }
+
+        main::-webkit-scrollbar {
+            display: none;
+            /* Safari and Chrome */
+        }
+
+        .table::-webkit-scrollbar {
+            display: none;
+            /* Safari and Chrome */
         }
