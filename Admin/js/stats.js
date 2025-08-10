@@ -38,7 +38,7 @@ function getStats() {
                 Aucun statistique disponible pour le moment.
             </div>
         `;
-                    } else {
+                    } else { 
                         // Traitement normal si des données existent
                         data.data.forEach(rec => {
                             cardsHtml += ` <div class="col-xl-3 col-md-6">
@@ -64,7 +64,7 @@ function getStats() {
                                 <div class="stat-icon" style="background: linear-gradient(135deg, #ffc107, #e0a800);">
                                     <i class="fas fa-coins"></i>
                                 </div>
-                                <h3 class="stat-number">$${rec.total_montant}</h3>
+                                <h4 class="stat-number">$${rec.total_montant}</h4>
                                 <p class="stat-label">Total FCFA</p>
                             </div>
                         </div>

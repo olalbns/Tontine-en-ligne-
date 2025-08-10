@@ -109,46 +109,7 @@
 
                     <!-- Statistics Cards -->
                     <div class="row stats_container">
-                        <div class="col-xl-3 col-md-6">
-                            <div class="stat-card">
-                                <div class="stat-icon" style="background: linear-gradient(135deg, #28a745, #20c997);">
-                                    <i class="fas fa-users"></i>
-                                </div>
-                                <h3 class="stat-number">1,254</h3>
-                                <p class="stat-label">Utilisateurs Actifs</p>
-                                <small class="text-success"><i class="fas fa-arrow-up"></i> +12% ce mois</small>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="stat-card">
-                                <div class="stat-icon" style="background: linear-gradient(135deg, #007bff, #0056b3);">
-                                    <i class="fas fa-money-bill-wave"></i>
-                                </div>
-                                <h3 class="stat-number">847</h3>
-                                <p class="stat-label">Cotisations Actives</p>
-                                <small class="text-primary"><i class="fas fa-arrow-up"></i> +8% ce mois</small>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="stat-card">
-                                <div class="stat-icon" style="background: linear-gradient(135deg, #ffc107, #e0a800);">
-                                    <i class="fas fa-coins"></i>
-                                </div>
-                                <h3 class="stat-number">2.5M</h3>
-                                <p class="stat-label">Total FCFA</p>
-                                <small class="text-warning"><i class="fas fa-arrow-up"></i> +15% ce mois</small>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="stat-card">
-                                <div class="stat-icon" style="background: linear-gradient(135deg, #dc3545, #c82333);">
-                                    <i class="fas fa-gift"></i>
-                                </div>
-                                <h3 class="stat-number">156</h3>
-                                <p class="stat-label">Récompenses Distribuées</p>
-                                <small class="text-danger"><i class="fas fa-arrow-up"></i> +25% ce mois</small>
-                            </div>
-                        </div>
+                      <div class="alert alert-success">Chargement en cours <span class="spiner spiner-success"></span> </div>
                     </div>
 
                     <!-- Quick Actions -->
@@ -170,7 +131,7 @@
 
                     <!-- Recent Activities -->
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md">
                             <div class="table-card">
                                 <h5><i class="fas fa-clock me-2"></i>Activités Récentes</h5>
                                 <div class="table-responsive">
@@ -226,11 +187,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <!-- <div class="col-md-4">
                             <div class="chart-card">
                                 <h5><i class="fas fa-chart-pie me-2"></i>Répartition des Cotisations</h5>
                                 <canvas id="cotisationChart" width="400" height="200"></canvas>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 30 juil. 2025 à 10:14
+-- Généré le : dim. 10 août 2025 à 07:47
 -- Version du serveur : 5.7.36
 -- Version de PHP : 8.1.0
 
@@ -24,6 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id_ad` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_ad` varchar(200) NOT NULL,
+  `prenom_ad` varchar(200) NOT NULL,
+  `email_ad` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `role` varchar(200) NOT NULL,
+  `statut` varchar(200) NOT NULL,
+  `date_ajout` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_ad`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`id_ad`, `nom_ad`, `prenom_ad`, `email_ad`, `password`, `role`, `statut`, `date_ajout`) VALUES
+(1, 'Super', 'Admin', 'superadmin@gmail.com', '$2y$10$annEk0OU/huCZkkkk2lc7OsULDA8wsxlrbDamyM/ra6CUDEzvCUZi', 'Super admin', 'actif', '2025-07-31 21:10:47');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `cotisation`
 --
 
@@ -39,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `cotisation` (
   KEY `id_uti` (`id_uti`),
   KEY `id_rec` (`id_rec`),
   KEY `id_method` (`id_method`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `cotisation`
@@ -52,7 +78,13 @@ INSERT INTO `cotisation` (`id_coti`, `id_uti`, `id_rec`, `id_method`, `montant`,
 (4, 14, 1, 1, '5.5555555555556E+27', '2025-07-29 23:49:24'),
 (5, 14, 3, 1, '8.8884777777778E+19', '2025-07-30 06:53:02'),
 (6, 14, 2, 1, '800000', '2025-07-30 07:05:38'),
-(7, 14, 1, 1, '7.7798888888889E+16', '2025-07-30 07:38:24');
+(7, 14, 1, 1, '7.7798888888889E+16', '2025-07-30 07:38:24'),
+(8, 22, 3, 2, '989', '2025-08-09 23:28:25'),
+(9, 22, 2, 2, '555555555555', '2025-08-09 23:51:25'),
+(10, 22, 3, 2, '989', '2025-08-10 00:16:20'),
+(11, 22, 3, 2, '989', '2025-08-10 00:23:28'),
+(12, 22, 3, 2, '9895588', '2025-08-10 00:28:41'),
+(13, 22, 1, 2, '4455555444', '2025-08-10 00:40:54');
 
 -- --------------------------------------------------------
 
@@ -71,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `echeance` (
   `date_cotisation` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id_eche`),
   KEY `id_rec` (`id_rec`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `echeance`
@@ -81,7 +113,22 @@ INSERT INTO `echeance` (`id_eche`, `id_uti`, `id_rec`, `statut`, `date_échéanc
 (1, 14, 2, 'cotisée', '2025-07-30', 'hebdomadaire', '2025-07-30 08:05:38'),
 (2, 14, 1, 'manquée', '2025-07-29', 'journalier', NULL),
 (3, 14, 1, 'manquée', '2025-07-29', 'journalier', NULL),
-(4, 14, 1, 'cotisée', '2025-07-30', 'journalier', '2025-07-30 08:38:24');
+(4, 14, 1, 'cotisée', '2025-07-30', 'journalier', '2025-07-30 08:38:24'),
+(5, 22, 2, 'manquée', '2025-07-31', 'journalier', NULL),
+(6, 22, 2, 'manquée', '2025-08-01', 'journalier', NULL),
+(7, 22, 2, 'manquée', '2025-08-02', 'journalier', NULL),
+(8, 22, 2, 'manquée', '2025-08-03', 'journalier', NULL),
+(9, 22, 2, 'manquée', '2025-08-04', 'journalier', NULL),
+(10, 22, 2, 'manquée', '2025-08-05', 'journalier', NULL),
+(11, 22, 3, 'cotisée', '2025-08-09', 'journalier', '2025-08-10 00:28:25'),
+(12, 22, 2, 'manquée', '2025-08-06', 'journalier', NULL),
+(13, 22, 2, 'manquée', '2025-08-07', 'journalier', NULL),
+(14, 22, 2, 'manquée', '2025-08-08', 'journalier', NULL),
+(15, 22, 2, 'cotisée', '2025-08-09', 'journalier', '2025-08-10 00:51:25'),
+(16, 22, 3, 'cotisée', '2025-08-10', 'journalier', '2025-08-10 01:16:20'),
+(17, 22, 3, 'cotisée', '2025-08-11', 'journalier', '2025-08-10 01:23:28'),
+(18, 22, 3, 'cotisée', '2025-08-12', 'journalier', '2025-08-10 01:28:41'),
+(19, 22, 1, 'terminé', '2025-08-10', 'mensuel', '2025-08-10 01:40:54');
 
 -- --------------------------------------------------------
 
@@ -102,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `infocoti` (
   PRIMARY KEY (`id_info`),
   KEY `id_rec` (`id_rec`),
   KEY `id_uti` (`id_uti`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `infocoti`
@@ -110,7 +157,10 @@ CREATE TABLE IF NOT EXISTS `infocoti` (
 
 INSERT INTO `infocoti` (`id_info`, `id_uti`, `balance_uti`, `id_rec`, `types`, `montantChoisie`, `date_limite`, `depart_date`) VALUES
 (1, 14, '800000', 2, 'hebdomadaire', '800000', '2025-08-06', '2025-07-29 23:00:00'),
-(2, 14, '7.7798888888889e16', 1, 'journalier', '77798888888888900', '2025-07-31T07:38:03.466Z', '2025-07-29 23:00:00');
+(2, 14, '7.7798888888889e16', 1, 'journalier', '77798888888888900', '2025-07-31T07:38:03.466Z', '2025-07-29 23:00:00'),
+(3, 22, '555555555555', 2, 'journalier', '555555555555', '2025-08-10T23:51:08.690Z', '2025-07-30 23:00:00'),
+(4, 22, '9898555', 3, 'journalier', '9895588', '2025-08-11T00:28:31.094Z', '2025-08-08 23:00:00'),
+(5, 22, '4455555444', 1, 'mensuel', '4455555444', '2025-09-10', '2025-08-09 23:00:00');
 
 -- --------------------------------------------------------
 
@@ -127,14 +177,15 @@ CREATE TABLE IF NOT EXISTS `method_payement` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_method`),
   KEY `id_uti` (`id_uti`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `method_payement`
 --
 
 INSERT INTO `method_payement` (`id_method`, `id_uti`, `types`, `details`, `date`) VALUES
-(1, 14, 'mobile_money', '[\"777\",\"555\",\"jjhhjhh\"]', '2025-07-28 16:44:25');
+(1, 14, 'mobile_money', '[\"777\",\"555\",\"jjhhjhh\"]', '2025-07-28 16:44:25'),
+(2, 22, 'mobile_money', '[\"44842840\",\"Lbn\",\"Ola\"]', '2025-08-09 23:28:08');
 
 -- --------------------------------------------------------
 
@@ -152,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `notification` (
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_notif`),
   KEY `id_uti` (`id_uti`)
-) ENGINE=MyISAM AUTO_INCREMENT=738 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=768 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `notification`
@@ -896,7 +947,37 @@ INSERT INTO `notification` (`id_notif`, `id_uti`, `id_rec`, `message`, `type`, `
 (734, 14, 1, 'Échéance manquée pour le 29/07/2025', 'warning', '2025-07-30 07:26:52'),
 (735, 14, 1, 'Nouvelle échéance programmée pour le 30/07/2025', 'info', '2025-07-30 07:26:52'),
 (736, 14, 1, 'Modification du mode de cotisation pour la récompense', 'info', '2025-07-30 07:38:03'),
-(737, 14, 1, 'Félicitations ! Vous avez terminé toutes les cotisations pour cette récompense.', 'success', '2025-07-30 07:38:24');
+(737, 14, 1, 'Félicitations ! Vous avez terminé toutes les cotisations pour cette récompense.', 'success', '2025-07-30 07:38:24'),
+(738, 22, 2, 'Nouvelle récompense ajoutée.', 'info', '2025-07-31 07:45:33'),
+(739, 22, 2, 'Échéance manquée pour le 31/07/2025', 'warning', '2025-08-09 22:34:48'),
+(740, 22, 2, 'Nouvelle échéance programmée pour le 01/08/2025', 'info', '2025-08-09 22:34:48'),
+(741, 22, 2, 'Échéance manquée pour le 01/08/2025', 'warning', '2025-08-09 22:36:39'),
+(742, 22, 2, 'Nouvelle échéance programmée pour le 02/08/2025', 'info', '2025-08-09 22:36:39'),
+(743, 22, 2, 'Échéance manquée pour le 02/08/2025', 'warning', '2025-08-09 22:36:49'),
+(744, 22, 2, 'Nouvelle échéance programmée pour le 03/08/2025', 'info', '2025-08-09 22:36:49'),
+(745, 22, 2, 'Échéance manquée pour le 03/08/2025', 'warning', '2025-08-09 22:36:56'),
+(746, 22, 2, 'Nouvelle échéance programmée pour le 04/08/2025', 'info', '2025-08-09 22:36:56'),
+(747, 22, 2, 'Échéance manquée pour le 04/08/2025', 'warning', '2025-08-09 22:40:09'),
+(748, 22, 2, 'Nouvelle échéance programmée pour le 05/08/2025', 'info', '2025-08-09 22:40:09'),
+(749, 22, 3, 'Nouvelle récompense ajoutée.', 'info', '2025-08-09 22:42:58'),
+(750, 22, 2, 'Échéance manquée pour le 05/08/2025', 'warning', '2025-08-09 22:42:59'),
+(751, 22, 2, 'Nouvelle échéance programmée pour le 06/08/2025', 'info', '2025-08-09 22:42:59'),
+(752, 22, 2, 'Échéance manquée pour le 06/08/2025', 'warning', '2025-08-09 22:46:33'),
+(753, 22, 2, 'Nouvelle échéance programmée pour le 07/08/2025', 'info', '2025-08-09 22:46:33'),
+(754, 22, 2, 'Échéance manquée pour le 07/08/2025', 'warning', '2025-08-09 22:46:42'),
+(755, 22, 2, 'Nouvelle échéance programmée pour le 08/08/2025', 'info', '2025-08-09 22:46:42'),
+(756, 22, 2, 'Échéance manquée pour le 08/08/2025', 'warning', '2025-08-09 22:51:17'),
+(757, 22, 2, 'Nouvelle échéance programmée pour le 09/08/2025', 'info', '2025-08-09 22:51:17'),
+(758, 22, NULL, 'Nouvelle méthode de paiement ajouter.', 'info', '2025-08-09 23:28:09'),
+(759, 22, 3, 'Prochaine échéance programmée pour le 10/08/2025', 'info', '2025-08-09 23:28:25'),
+(760, 22, 2, 'Modification du mode de cotisation pour la récompense', 'info', '2025-08-09 23:51:10'),
+(761, 22, 2, 'Félicitations ! Vous avez terminé toutes les cotisations pour cette récompense.', 'success', '2025-08-09 23:51:25'),
+(762, 22, 3, 'Prochaine échéance programmée pour le 11/08/2025', 'info', '2025-08-10 00:16:20'),
+(763, 22, 3, 'Prochaine échéance programmée pour le 12/08/2025', 'info', '2025-08-10 00:23:28'),
+(764, 22, 3, 'Modification du mode de cotisation pour la récompense', 'info', '2025-08-10 00:28:31'),
+(765, 22, 3, 'Félicitations ! Vous avez terminé toutes les cotisations pour cette récompense.', 'success', '2025-08-10 00:28:41'),
+(766, 22, 1, 'Nouvelle récompense ajoutée.', 'info', '2025-08-10 00:40:28'),
+(767, 22, 1, 'Félicitations ! Vous avez terminé toutes les cotisations pour cette récompense.', 'success', '2025-08-10 00:40:54');
 
 -- --------------------------------------------------------
 
@@ -944,7 +1025,7 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `date_uti` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_uti`),
   KEY `id_rec` (`id_rec`)
-) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `utilisateurs`
@@ -965,7 +1046,8 @@ INSERT INTO `utilisateurs` (`id_uti`, `nom_uti`, `prenom_uti`, `img_uti`, `passw
 (18, 'Gau', 'Tier', '../Assets/img/default.png', '$2y$10$pcdm9IDEug13av7r3kCgTeWM3g9bLEahNZgWPRFuauGiZSJEX9FBa', '0', NULL, NULL, 'gau@g.c', '123', '2025-07-26 07:50:59'),
 (19, 'LABINTAN', 'Emmanue', '../Assets/img/default.png', '$2y$10$zOj..wo0izy3CGmS/oL5eOyiDmaWtNtfpGMCgf0b5b/ItLRr2OyRG', '0', NULL, NULL, 'emmanuellbns@gmail.co', '5250300777888', '2025-07-26 07:54:26'),
 (20, 'LABINTAN', 'Emmanue', '../Assets/img/default.png', '$2y$10$FuIwDQLLyim145n8KTJqYuXb7ZJft3uKOn1v3WEEJIQmzYPVmE58K', '0', NULL, 2, 'emmanuellbns@gil.co', '525030077780', '2025-07-26 13:48:11'),
-(21, 'Kbb', 'Vgg', 'https://68c20f279ed1.ngrok-free.app/Tontine%20en%20ligne/public/Assets/img/default.png', '$2y$10$QkoWZj88IAXjSH6V92m.P.xOvnzt6xbqqZLC/qfQbOhWOa29f4ibW', '0', NULL, 3, 'fffg@gg.cg', '5555', '2025-07-26 13:55:40');
+(21, 'Kbb', 'Vgg', 'https://68c20f279ed1.ngrok-free.app/Tontine%20en%20ligne/public/Assets/img/default.png', '$2y$10$QkoWZj88IAXjSH6V92m.P.xOvnzt6xbqqZLC/qfQbOhWOa29f4ibW', '0', NULL, 3, 'fffg@gg.cg', '5555', '2025-07-26 13:55:40'),
+(22, 'LABINTAN', 'Emmanuel', '../Assets/img/default.png', '$2y$10$na3JPkOxUtJsbs6dEchbEOciLNSNhRiqgDr780HiWyrQf/x5yoik2', '0', NULL, 1, 'rootm@jjL.ii', '5250300777777', '2025-07-31 07:44:57');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

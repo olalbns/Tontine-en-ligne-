@@ -88,6 +88,7 @@ function afficherSpinner(cible = ".spinner-zone") {
         }
     }, 1000);
 }
+// Fonction pour afficher un spiner pendant le chargement des données api
 
 
 document.addEventListener('DOMContentLoaded', () => {
