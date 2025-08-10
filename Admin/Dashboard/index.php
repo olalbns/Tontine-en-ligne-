@@ -98,9 +98,10 @@
                     </li>
                 </ul>
             </nav>
-            
+
             <!-- Main Content -->
             <main class="col-md-9 col-lg-10 main-content">
+                <div class="erreur-zone"></div>
                 <!-- Dashboard Section -->
                 <div id="dashboard-section" class="content-section">
                     <div class="page-header">
@@ -162,83 +163,145 @@
                             </div> -->
                     </div>
                 </div>
-        
 
-        <!-- Users Section -->
-        <div id="users-section" class="content-section" style="display: none;">
-            <div class="page-header">
-                <h1><i class="fas fa-users me-2"></i>Gestion des Utilisateurs</h1>
-                <p class="mb-0">Gérez tous les utilisateurs de la plateforme</p>
-            </div>
 
-            <div class="table-card">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h5><i class="fas fa-list me-2"></i>Liste des Utilisateurs</h5>
-                    <button class="btn btn-success">
-                        <i class="fas fa-plus me-2"></i>Nouvel Utilisateur
-                    </button>
+                <!-- Users Section -->
+                <div id="users-section" class="content-section" style="display: none;">
+                    <div class="page-header">
+                        <h1><i class="fas fa-users me-2"></i>Gestion des Utilisateurs</h1>
+                        <p class="mb-0">Gérez tous les utilisateurs de la plateforme</p>
+                    </div>
+
+                    <div class="table-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5><i class="fas fa-list me-2"></i>Liste des Utilisateurs</h5>
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalAddUser">
+                                <i class="fas fa-user-plus"></i> Ajouter un utilisateur
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nom Complet</th>
+                                        <th>Email</th>
+                                        <th>Téléphone</th>
+                                        <th>Date d'inscription</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="users-table">
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Modal Voir -->
+                        <div class="modal fade" id="modalViewUser" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content p-3">
+                                    <h5 id="viewUserName"></h5>
+                                    <p>Email : <span id="viewUserEmail"></span></p>
+                                    <p>Téléphone : <span id="viewUserPhone"></span></p>
+                                    <p>Date inscription : <span id="viewUserDate"></span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal Modifier -->
+                        <div class="modal fade" id="modalEditUser" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content p-3">
+                                    <h3>Modifier l'utilisateur</h3>
+                                    <form id="formEditUser" class="">
+                                        <input class="form-control mb-2" type="hidden" name="id_uti" id="editUserId">
+                                        <input class="form-control mb-2" type="text" name="nom_uti" id="editUserNom" placeholder="Nom">
+                                        <input class="form-control mb-2" type="text" name="prenom_uti" id="editUserPrenom" placeholder="Prénom">
+                                        <input class="form-control mb-2" type="email" name="email_uti" id="editUserEmail" placeholder="Email">
+                                        <input class="form-control mb-2" type="text" name="num_uti" id="editUserPhone" placeholder="Téléphone">
+                                        <button type="submit" class="btn btn-primary mt-2">Enregistrer</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal Supprimer -->
+                        <div class="modal fade" id="modalDeleteUser" tabindex="-1">
+                            <div class="modal-dialog">
+                                <form id="formDeleteUser" class="modal-content p-3">
+                                    <input type="hidden" name="id_uti" id="deleteUserId">
+                                    <p>Voulez-vous vraiment supprimer cet utilisateur ?</p>
+                                    <button type="submit" class="btn btn-danger">Supprimer</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal fade" id="modalAddUser" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <form id="formAddUser">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Ajouter un utilisateur</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <input type="text" id="addNom" class="form-control mb-2" placeholder="Nom" required>
+                                        <input type="text" id="addPrenom" class="form-control mb-2" placeholder="Prénom" required>
+                                        <input type="email" id="addEmail" class="form-control mb-2" placeholder="Email" required>
+                                        <input type="text" id="addPhone" class="form-control mb-2" placeholder="Téléphone" required>
+                                        <input type="password" id="addPassword" class="form-control mb-2" placeholder="Mot de passe" required>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-success">Enregistrer</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nom Complet</th>
-                                <th>Email</th>
-                                <th>Téléphone</th>
-                                <th>Date d'inscription</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody class="users-table">
-                        </tbody>
-                    </table>
+
+                <!-- Other sections would be added similarly -->
+                <div id="cotisations-section" class="content-section" style="display: none;">
+                    <div class="page-header">
+                        <h1><i class="fas fa-money-bill-wave me-2"></i>Gestion des Cotisations</h1>
+                        <p class="mb-0">Suivez et gérez toutes les cotisations</p>
+                    </div>
+                    <!-- Content for cotisations -->
                 </div>
-            </div>
-        </div>
 
-        <!-- Other sections would be added similarly -->
-        <div id="cotisations-section" class="content-section" style="display: none;">
-            <div class="page-header">
-                <h1><i class="fas fa-money-bill-wave me-2"></i>Gestion des Cotisations</h1>
-                <p class="mb-0">Suivez et gérez toutes les cotisations</p>
-            </div>
-            <!-- Content for cotisations -->
-        </div>
+                <div id="recompenses-section" class="content-section" style="display: none;">
+                    <div class="page-header">
+                        <h1><i class="fas fa-gift me-2"></i>Gestion des Récompenses</h1>
+                        <p class="mb-0">Gérez les récompenses disponibles</p>
+                    </div>
+                    <!-- Content for recompenses -->
+                </div>
 
-        <div id="recompenses-section" class="content-section" style="display: none;">
-            <div class="page-header">
-                <h1><i class="fas fa-gift me-2"></i>Gestion des Récompenses</h1>
-                <p class="mb-0">Gérez les récompenses disponibles</p>
-            </div>
-            <!-- Content for recompenses -->
-        </div>
+                <div id="transactions-section" class="content-section" style="display: none;">
+                    <div class="page-header">
+                        <h1><i class="fas fa-exchange-alt me-2"></i>Transactions</h1>
+                        <p class="mb-0">Historique de toutes les transactions</p>
+                    </div>
+                    <!-- Content for transactions -->
+                </div>
 
-        <div id="transactions-section" class="content-section" style="display: none;">
-            <div class="page-header">
-                <h1><i class="fas fa-exchange-alt me-2"></i>Transactions</h1>
-                <p class="mb-0">Historique de toutes les transactions</p>
-            </div>
-            <!-- Content for transactions -->
-        </div>
+                <div id="reports-section" class="content-section" style="display: none;">
+                    <div class="page-header">
+                        <h1><i class="fas fa-chart-bar me-2"></i>Rapports</h1>
+                        <p class="mb-0">Analyses et statistiques détaillées</p>
+                    </div>
+                    <!-- Content for reports -->
+                </div>
 
-        <div id="reports-section" class="content-section" style="display: none;">
-            <div class="page-header">
-                <h1><i class="fas fa-chart-bar me-2"></i>Rapports</h1>
-                <p class="mb-0">Analyses et statistiques détaillées</p>
-            </div>
-            <!-- Content for reports -->
+                <div id="settings-section" class="content-section" style="display: none;">
+                    <div class="page-header">
+                        <h1><i class="fas fa-cog me-2"></i>Paramètres</h1>
+                        <p class="mb-0">Configuration de la plateforme</p>
+                    </div>
+                    <!-- Content for settings -->
+                </div>
+            </main>
         </div>
-
-        <div id="settings-section" class="content-section" style="display: none;">
-            <div class="page-header">
-                <h1><i class="fas fa-cog me-2"></i>Paramètres</h1>
-                <p class="mb-0">Configuration de la plateforme</p>
-            </div>
-            <!-- Content for settings -->
-        </div>
-        </main>
-    </div>
     </div>
 
     <!-- Overlay for mobile -->
