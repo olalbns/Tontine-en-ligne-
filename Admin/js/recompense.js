@@ -23,7 +23,7 @@ function getRec() {
             <div class="alert alert-info w-100 text-center mt-3">
                 Aucun statistique disponible pour le moment.
             </div>
-        `;
+        `; 
                     } else {
                         data.data.forEach(item => {
                             cardsHtml += `
