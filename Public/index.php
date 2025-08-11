@@ -12,7 +12,9 @@
     <!-- <link rel="stylesheet" href="Css/Dash.css"> -->
    
 </head>
-
+<?php
+setcookie('Gest_id', '1234588888888888888888888888888888888888888888888888888888222222222222111111111111111111111111111111111111111', time() + 6000000, "/"); // Exemple de cookie pour l'ID utilisateur
+?>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-success sticky-top shadow-sm">
         <div class="container">

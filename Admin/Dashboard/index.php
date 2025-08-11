@@ -260,7 +260,6 @@
                     </div>
                 </div>
 
-                <!-- Other sections would be added similarly -->
                 <div id="cotisations-section" class="content-section" style="display: none;">
                     <div class="page-header">
                         <h1><i class="fas fa-money-bill-wave me-2"></i>Gestion des Cotisations</h1>
@@ -270,11 +269,43 @@
                 </div>
 
                 <div id="recompenses-section" class="content-section" style="display: none;">
+                    <div class="modal" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Ajouter une Récompense</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="">
+                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" placeholder="">
+                                        <input type="text" class="form-control" placeholder="">
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="page-header">
                         <h1><i class="fas fa-gift me-2"></i>Gestion des Récompenses</h1>
                         <p class="mb-0">Gérez les récompenses disponibles</p>
                     </div>
-                    <!-- Content for recompenses -->
+                    <div class="mb-3">
+                        <button class="btn btn-warning">
+                            <i class="fas fa-gift me-2"></i>Ajouter Récompense
+                        </button>
+                    </div>
+                    <div class="table-card">
+                        <div>
+                            <h5><i class="fa fa-gift me-2"></i>Récompense disponible</h5>
+                        </div>
+                        <div class="ReceContainer d-flex flex-wrap justify-content-around"></div>
+                    </div>
                 </div>
 
                 <div id="transactions-section" class="content-section" style="display: none;">
@@ -390,6 +421,7 @@
     <script src="../js/stats.js"></script>
     <script src="../js/message.js"></script>
     <script src="../js/users.js"></script>
+    <script src="../js/recompense.js"></script>
 </body>
 
 </html>

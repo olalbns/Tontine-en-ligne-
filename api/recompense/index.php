@@ -10,7 +10,18 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $id_uti = $_COOKIE['User_id'] ?? null;
 
         if (!$id_uti) {
-            echo json_encode(['status' => 'error', 'message' => 'ID utilisateur manquant.']);
+            $stmt = $con->prepare("SELECT * FROM recompense");
+            $stmt->execute();
+            $userData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $response = [
+                'status' => 'success',
+                'data' => [
+                    'recompense' => $userData,
+                ]
+            ];
+
+            echo json_encode($response);
             break;
         }
 
