@@ -121,7 +121,7 @@ mysql -u root -p nom_de_la_bdd < database.sql
 1. Lance ton serveur local (XAMPP, Laragon, etc.)
 2. Ouvre ton navigateur sur http://localhost/Tontine-en-ligne-
 3. Connecte-toi avec les identifiants par défaut :
-   - Email    : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5c3d383135321c39243d312c3039723f3331">[email&#160;protected]</a>
+   - Email    : admin@hh.com
    - Password : admin123
 ```
 
