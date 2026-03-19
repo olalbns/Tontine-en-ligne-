@@ -15,7 +15,7 @@
 ## 📸 Aperçu
 
 <p align="center">
-  <img src="./screenshots/apercu.png" alt="Aperçu du projet" width="800"/>
+  <img src="./Capture d'écran 2026-03-19 060111.png" alt="Aperçu du projet" width="800"/>
 </p>
 
 ---
